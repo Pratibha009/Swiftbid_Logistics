@@ -17,16 +17,28 @@ body {
     margin: 0;
     font-weight: bold;
   }
+  p{
+    padding: 0 10px;
+  }
   .social{
     display: flex;
     flex-direction: row;
     text-align: center;
-    justify-content: center;
-    
+    justify-content: center;  
   }
   .icon{
     margin: 10px;
   }
   #anchor{
     color: #fff;
+  }
+
+  footer{
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  #footer{
+    margin: 5px;
   }
