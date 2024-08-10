@@ -7,11 +7,16 @@ body {
     text-align: center;
     padding-top: 150px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     /* justify-content: center; */
   }
 
+  #heading{
+    font-size: 40px;
+    margin: 0;
+    font-weight: bold;
+  }
   .social{
     display: flex;
     flex-direction: row;
