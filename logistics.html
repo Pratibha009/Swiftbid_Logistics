@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Solutions</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    border-bottom: 3px solid #77A22A;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+header ul li a:hover {
+    color: #77A22A;
+}
+
+.hero {
+    background: url('your-hero-image.jpg') no-repeat center center/cover;
+    height: 500px;
+    position: relative;
+   color: #fff;
+    text-align: center;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #333;
+    transform: translate(-50%, -50%);
+}
+
+.hero h2 {
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #77A22A;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #fff;
+    color: #77A22A;
+}
+
+section {
+    padding: 20px 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.services, .testimonials, .about, .contact {
+    background: #fff;
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.services-grid, .testimonial {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.services-grid .service {
+    flex-basis: 30%;
+    text-align: center;
+    padding: 20px;
+}
+
+.service i {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: #77A22A;
+}
+
+.testimonial {
+    flex-basis: 45%;
+    margin: 20px;
+    text-align: center;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 10px;
+    background: #77A22A;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact button:hover {
+    background: #fff;
+    color: #77A22A;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+.sec{
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    color:#ffffff;
+}
+.warehousing{
+    background-image: url(A-warehouse.jpg);
+    background-size: cover;
+    opacity: .8;
+    height: 500px;
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.warehousing img{
+    height: 500px;
+    width: 550px;
+    opacity: .5;
+}
+.driver{
+    height: 500px;
+    width: 500px;
+    background-image: url(trucking-service.jpeg);
+    opacity: .8;
+    background-size: cover ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.quote{
+    height: 500px;
+    width: 500px;
+    background-image: url(quote.jpg);
+    opacity: .8;
+    background-size: cover ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+.driver img{
+    height: 500px;
+    width: 550px;
+    opacity: .5;
+}
+#log{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 800;
+    padding: 20px;
+    flex-direction: column;
+}
+#logistic{
+    font-size: 30px;
+    background-color: transparent;
+    border-radius: 30px;
+    padding: 10px;
+    color: red;
+}
+a{
+    color: red;
+    text-decoration: none;
+}
+
+     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swiftbid Logistics </h1>
+            <nav>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>
+
+Reliable Logistics Partner</h2>
+            <p>Streamline your supply chain with our comprehensive logistics solutions.</p>
+            <a href="#services" class="btn">Learn More</a>
+        </div>
+    </section> 
+    <section class="sec">
+        <div class="warehousing">
+            <p id="log" >WAREHOUSING</p>
+            <button id="logistic" ><a href="#services"> Get Started </a>
+                
+            </button>
+            
+        </div>
+        <div class="driver">
+            <p id="log" >DRIVERS APPLY HERE</p>
+            <button id="logistic" >Get Started</button>
+            
+        </div>
+        <div class="quote">
+            <!-- <img src="trucking-service.jpeg" alt=""> -->
+            <p id="log" >REQUEST QUOTES</p>
+            <button id="logistic" >Get Started</button>
+             
+        </div>
+        
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service">
+                    <i class="fas fa-truck"></i>
+                    <h3>Transportation</h3>
+                    <p>Reliable and efficient transportation services for your goods.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-warehouse"></i>
+                    <h3>Warehousing</h3>
+                    <p>Secure and flexible storage solutions for all types of goods.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Distribution</h3>
+                    <p>Timely and accurate distribution services to meet your needs.</p>
+                </div>
+            </div>
+        </div> 
+
+</section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>We are a leading logistics company with years of experience in providing top-notch services to our clients. Our mission is to streamline your supply chain and help you achieve your business goals.</p>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"Their logistics solutions have significantly improved our supply chain efficiency. Highly recommended!"</p>
+                <p>- John Doe, CEO of XYZ Company</p>
+            </div>
+            <div class="testimonial">
+                <p>"Their team is always responsive and goes the extra mile to meet our needs. We couldn't be happier with their services."</p>
+                <p>- Jane Smith, COO of ABC Corporation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section id="contact" class="contact">
+        <div class="container">
+            < h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <textarea placeholder="Message"></textarea>
+                <button>Send</button>
+            </form>
+        </div>
+    </section> -->
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Swiftbid Logistics. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

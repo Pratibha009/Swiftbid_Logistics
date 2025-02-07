@@ -127,7 +127,7 @@ header ul li a:hover {
 
 
     .services {
-        padding: 40px;
+        padding: 30px;
         /* display: flex; */
         text-align: center;
         font-size: 30px;
@@ -163,9 +163,12 @@ header ul li a:hover {
     .section1:hover #para {
         display: block;
         /* /* height: 600px;  */
+        
     }
     .section1:hover #read {
         display: none;
+        margin: 0;
+
         /* /* height: 600px;  */
     }
     
@@ -377,6 +380,23 @@ header ul li a:hover {
         text-decoration: none;
         padding: 5px 0;
     }
+    #quicks{
+        padding: 5px 0;
+        color: #d9dddf;
+
+    }
+    #quick:hover {
+        color: #77A22A;
+    }
+
+    .icon{
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0 10px;
+        margin: 0;
+    }
 
     
     /* truck services */
@@ -575,6 +595,9 @@ header ul li a:hover {
     #quick{
         font-size: 16px;
     }
+    #quicks{
+        font-size: 16px;
+    }
     .foot{
         display: block;
     }
@@ -606,7 +629,10 @@ header ul li a:hover {
     #quick{
         font-size: 14px;
     }
-
+    #quicks{
+        font-size: 16px;
+        margin: 0;
+    }
     footer{
         display: block;
     }
@@ -781,3 +807,9 @@ header ul li a:hover {
 
 
 
+.height{
+    height: 100px;
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+}
