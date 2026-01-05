@@ -4,98 +4,860 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trucking Services</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Trucking Services - SwiftBid Logistics</title>
     <link rel="shortcut icon" href="SWIFTBID LOGISTICS logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background: #fff;
+            padding: 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 90px;
+        }
+
+        #nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 90px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo img {
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #1F1A1A;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            width: 100%;
+            padding: 0;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomIn 20s infinite alternate;
+        }
+
+        @keyframes zoomIn {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(30,60,114,0.8), rgba(42,82,152,0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .first {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            max-width: 1200px;
+        }
+
+        .first:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-abt {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .img img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Services Section */
+        #h {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 4rem 0 2rem;
+            color: #1e3c72;
+            position: relative;
+        }
+
+        #h::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #ffd700, #ffed4e);
+            border-radius: 2px;
+        }
+
+        .content {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .one {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #1e3c72;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .one::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .one:hover::before {
+            left: 100%;
+        }
+
+        .one:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-left-color: #ffd700;
+        }
+
+        .one b {
+            color: #1e3c72;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+
+        .one p {
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        /* Interactive Elements */
+        .service-icon {
+            font-size: 2rem;
+            color: #ffd700;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .one:hover .service-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 0 2rem;
+            align-items: start;
+        }
+
+        .foot {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .foot h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            text-align: left;
+        }
+
+        .foot a, .foot p {
+            color: #e0e0e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .foot a:hover {
+            color: #ffd700;
+        }
+
+        .icon {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .icon a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .icon a:hover {
+            background: #ffd700;
+            color: #1e3c72 !important;
+            transform: translateY(-3px);
+        }
+
+        /* Mobile menu styles for services page */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #1F1A1A;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+        }
+
+        .mobile-menu-btn:hover {
+            color: #ffd700;
+        }
+
+        /* Mobile menu overlay for side navigation */
+        body.side-nav .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        body.side-nav .mobile-menu-overlay.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                height: 70px;
+            }
+
+            #nav {
+                padding: 0 1rem;
+                height: 70px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 300px;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                transition: left 0.3s ease;
+                z-index: 1000;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                padding-top: 80px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                text-align: left;
+                width: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            
+            nav ul li a {
+                font-size: 16px;
+                padding: 15px 25px;
+                display: block;
+                border-radius: 0;
+                width: 100%;
+            }
+
+            .hero {
+                margin-top: 70px;
+                height: 400px;
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                padding: 0 1rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            main {
+                padding: 0 1rem;
+            }
+
+            .first {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin: 2rem auto;
+                padding: 1.5rem;
+            }
+
+            .service-abt {
+                text-align: center;
+            }
+
+            .service-abt h2 {
+                text-align: center;
+            }
+
+            #h {
+                font-size: 2rem;
+                margin: 2rem 0 1.5rem;
+                padding: 0 1rem;
+            }
+
+            .content {
+                gap: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .one {
+                padding: 1.5rem;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .foot {
+                text-align: center;
+            }
+
+            .foot h3 {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.75rem;
+            }
+
+            .first {
+                padding: 1rem;
+            }
+
+            #h {
+                font-size: 1.75rem;
+            }
+
+            .one {
+                padding: 1rem;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.6s ease forwards;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #1e3c72;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            background: #ffd700;
+            color: #1e3c72;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 
-<body>
-    <!-- <header>
-        <nav>
-            <div class="logo"><img src="SWIFTBID LOGISTICS logo.png" alt="" height="90px"></div>
-        </nav>
-    </header> -->
+<body class="side-nav">
     <header>
         <section id="nav">
-            <div class="logo"><img src="1.png" alt="" height="60px"></div>
-        
-        <nav>
-            <ul>
-                <li><a href="#p">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="#head">Testimonials</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </section>
+            <div class="logo"><img src="1.png" alt="SwiftBid Logistics" height="60px"></div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="logistics.html">Logistics</a></li>
+                    <li><a href="warehouse.html">Warehousing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
     <main>
-        <div class="">
-            <img src="trucking-service.jpeg" alt="" height="600px" width="100%">
-        </div>
-        <div class="first">
-
-            <div class="service-abt">Trucking services are essential for the efficient transportation of goods across
-                various distances. They involve the use of trucks to move cargo from one location to another, ensuring
-                timely and safe delivery.</div>
-            <div class="img"><img src="Truck-Transport.jpg" alt="" height="400px" width="600px"></div>
-
-        </div>
-
-        <div id="h">Services</div>
-        <div class="content">
-            <!-- <div id="p">Services</div> -->
-            <div class="one"><b>Full Truck Load (FTL):</b> This service is used when a single shipment takes up the entire
-                truck space. It's ideal for large shipments that need to be delivered directly to the destination
-                without stops.</div>
-
-            <div class="one"><b> Less Than Truck Load (LTL):</b> This service is for smaller shipments that share space with other cargo.
-                It's cost-effective for smaller businesses or when the shipment doesn't require a full truck.</div>
-
-            <div class="one"><b>Specialized Trucking:</b> This includes refrigerated trucks for perishable goods, flatbed trucks for
-                oversized items, and tanker trucks for liquids.</div> 
-
-            <div class="one"> <b>  Logistics and Supply Chain Management:</b> Coordinating the entire process from pickup to delivery,
-                including warehousing, inventory management, and distribution.</div>
-
-            <div class="one"> <b> Technology Integration:</b> Using advanced technologies like GPS tracking, route optimization software, and
-                automated dispatch systems to enhance efficiency and transparency.
+        <div class="hero">
+            <img src="trucking-service.jpeg" alt="Trucking Services">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Professional Trucking Services</h1>
+                    <p>Reliable, efficient, and secure transportation solutions for your business needs</p>
+                </div>
             </div>
+        </div>
+
+        <div class="first loading">
+            <div class="service-abt">
+                <h2 style="color: #1e3c72; margin-bottom: 1rem;">About Our Trucking Services</h2>
+                Trucking services are essential for the efficient transportation of goods across various distances. They involve the use of trucks to move cargo from one location to another, ensuring timely and safe delivery. Our experienced team and modern fleet ensure your cargo reaches its destination safely and on time.
+            </div>
+            <div class="img">
+                <img src="Truck-Transport.jpg" alt="Truck Transportation">
+            </div>
+        </div>
+
+        <div id="h">Our Services</div>
         
+        <div class="content">
+            <div class="one loading" onclick="toggleService(this)">
+                <div class="service-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <b>Full Truck Load (FTL)</b>
+                <p>This service is used when a single shipment takes up the entire truck space. It's ideal for large shipments that need to be delivered directly to the destination without stops. Perfect for businesses with large volume shipments requiring dedicated transportation.</p>
+            </div>
+
+            <div class="one loading" onclick="toggleService(this)">
+                <div class="service-icon">
+                    <i class="fas fa-boxes"></i>
+                </div>
+                <b>Less Than Truck Load (LTL)</b>
+                <p>This service is for smaller shipments that share space with other cargo. It's cost-effective for smaller businesses or when the shipment doesn't require a full truck. We optimize routes to ensure efficient delivery while reducing costs.</p>
+            </div>
+
+            <div class="one loading" onclick="toggleService(this)">
+                <div class="service-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <b>Specialized Trucking</b>
+                <p>This includes refrigerated trucks for perishable goods, flatbed trucks for oversized items, and tanker trucks for liquids. Our specialized fleet handles unique transportation requirements with precision and care.</p>
+            </div>
+
+            <div class="one loading" onclick="toggleService(this)">
+                <div class="service-icon">
+                    <i class="fas fa-route"></i>
+                </div>
+                <b>Logistics and Supply Chain Management</b>
+                <p>Coordinating the entire process from pickup to delivery, including warehousing, inventory management, and distribution. We provide end-to-end logistics solutions to streamline your supply chain operations.</p>
+            </div>
+
+            <div class="one loading" onclick="toggleService(this)">
+                <div class="service-icon">
+                    <i class="fas fa-satellite-dish"></i>
+                </div>
+                <b>Technology Integration</b>
+                <p>Using advanced technologies like GPS tracking, route optimization software, and automated dispatch systems to enhance efficiency and transparency. Real-time tracking and monitoring for complete visibility of your shipments.</p>
+            </div>
         </div>
     </main>
 
+    <button class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <footer>
-        <div class="foot">
-            <p id="f-l"><img src="1.png" alt=""></p>
-        </div>
         <div class="footer">
-        <div class="foot">
-            <p id="f-l">Quick Links</p>
-            <a id="quick" href="about.html">About Us</a>
-            <a id="quick" href="contact.html">Contact Us</a>
-            <a id="quick" href="#"></a>
+            <div class="foot">
+                <h3>Quick Links</h3>
+                <a href="about.html" aria-label="About Us">About Us</a>
+                <a href="contact.html" aria-label="Contact Us">Contact Us</a>
+            </div>
+            <div class="foot">
+                <h3>Services</h3>
+                <a href="services.html" aria-label="Trucking Service">Trucking Service</a>
+                <a href="warehouse.html" aria-label="Warehousing">Warehousing</a>
+                <a href="logistics.html" aria-label="Logistics Services">Logistics Services</a>
+            </div>
+            <div class="foot">
+                <h3>Quick Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 650, Main Chownk, Talab Tillo Jammu, Jammu</p>
+                <p><i class="fas fa-envelope"></i> swiftbidlogistics@gmail.com</p>
+                <p><i class="fas fa-phone"></i> Ph no. 9622551286</p>
+                <p><i class="fas fa-share-alt"></i> Follow us on:</p>
+                <div class="icon">
+                    <a href="https://www.facebook.com/profile.php?id=61563824091457&mibextid=ZbWKwL" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/accounts/onetap/?next=%2F" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://x.com/home" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="foot">
-            <p id="f-l">services</p>
-
-            <a id="quick" href="services.html">Trucking Service</a>
-            <a id="quick" href="#">Warehousing</a>
-            <a id="quick" href="#">Logistics Services</a>
-
-
-        </div>
-        <div class="foot">
-            <p id="f-l">Quick Contact</p>
-            <p id="quick">650, Main Chownk, Talab Tillo Jammu, Jammu</p>   
-            <p id="quick">Sandeepmahajan2003@gmail.com</p>
-            <p id="quick">Ph no. 9622551286</p>   
-            
-        </div>
-        </div>
-
     </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.1s';
+                    entry.target.classList.add('loading');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards
+        document.querySelectorAll('.one').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Service card interaction
+        function toggleService(element) {
+            element.style.transform = 'scale(1.02)';
+            setTimeout(() => {
+                element.style.transform = 'translateX(10px)';
+            }, 200);
+        }
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.style.display = 'flex';
+            } else {
+                scrollTop.style.display = 'none';
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 100) {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = '#fff';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.one').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0) scale(1)';
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Mobile menu functionality for services page (side-nav)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (mobileMenuBtn && navMenu && document.body.classList.contains('side-nav')) {
+            // Create overlay if it doesn't exist
+            let overlay = document.querySelector('.mobile-menu-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'mobile-menu-overlay';
+                document.body.appendChild(overlay);
+            }
+
+            const toggleMenu = () => {
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            const closeMenu = () => {
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            };
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', closeMenu);
+
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        }
+    </script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

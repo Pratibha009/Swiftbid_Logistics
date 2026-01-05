@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBL Blogs</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    #nav {
+      height: 90px;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: auto;
+      float: left;
+      padding: 10px;
+
+
+    }
+
+    header nav {
+      float: right;
+      margin-top: 10px;
+    }
+
+    header ul {
+      list-style: none;
+    }
+
+    header ul li {
+      display: inline;
+      margin: 0 20px;
+    }
+
+    header ul li a {
+      text-decoration: none;
+      color: #1f1a1a;
+      text-transform: uppercase;
+    }
+
+    header ul li a:hover {
+      color: #77A22A;
+    }
+
+    /* Inline side-nav styles (blog-only) */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #1f1a1a;
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1001;
+    }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: inline-block; }
+      header nav {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        padding-top: 80px;
+      }
+      header nav.active { left: 0; }
+      header ul { flex-direction: column; gap: 0; width: 100%; margin: 0; padding: 0; }
+      header ul li { width: 100%; border-bottom: 1px solid #f0f0f0; }
+      header ul li a { display: block; padding: 15px 25px; font-size: 16px; }
+      .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 999; display: none; }
+      .mobile-menu-overlay.active { display: block; }
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #e3f0ff 0%, #f7f9fa 100%);
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 48px auto 40px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 6px 36px rgba(26, 115, 232, 0.13);
+      padding: 44px 36px 40px 36px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 1.2s;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .main-heading {
+      color: #36454F;
+      font-size: 2.3rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-align: center;
+      margin-bottom: 0.5em;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 2px 8px #e3f0ff;
+    }
+
+    .highlight-bar {
+      width: 90px;
+      height: 6px;
+      background: linear-gradient(90deg, #1a73e8 60%, #5ec6fa 100%);
+      border-radius: 3px;
+      margin: 0.5em auto 2em auto;
+      display: block;
+    }
+
+    .section {
+      margin-bottom: 2.7em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 32px;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(26, 115, 232, 0.06);
+      background: #f7faff;
+      padding: 24px 18px 18px 18px;
+      transition: box-shadow 0.2s, background 0.2s;
+    }
+
+    .section:hover {
+      box-shadow: 0 6px 32px rgba(26, 115, 232, 0.13);
+      background: #eaf4ff;
+    }
+
+    .section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .section-img {
+      flex: 1 1 220px;
+      min-width: 180px;
+      max-width: 260px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .section-img img {
+      width: 100%;
+      max-width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(26, 115, 232, 0.10);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .section-img:hover img {
+      transform: scale(1.07) rotate(-2deg);
+      box-shadow: 0 8px 32px rgba(26, 115, 232, 0.18);
+    }
+
+    .section-content-block {
+      flex: 2 1 340px;
+      min-width: 220px;
+      padding: 0 12px;
+    }
+
+    .section-title {
+      color: #1a73e8;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+      margin-top: 0.2em;
+      border-left: 4px solid #1a73e8;
+      padding-left: 10px;
+    }
+
+    .section-content {
+      color: #333;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin-bottom: 0.7em;
+    }
+
+    ul {
+      margin: 0.5em 0 1.2em 1.5em;
+      color: #333;
+      font-size: 1.05rem;
+    }
+
+    .cta {
+      background: linear-gradient(90deg, #1a73e8 80%, #5ec6fa 100%);
+      color: #fff;
+      border-radius: 12px;
+      padding: 28px 18px;
+      text-align: center;
+      font-size: 1.22rem;
+      font-weight: 500;
+      margin-top: 2.5em;
+      box-shadow: 0 2px 16px rgba(26, 115, 232, 0.13);
+      letter-spacing: 0.5px;
+      animation: fadeIn 1.5s;
+    }
+
+    .cta a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 600;
+      margin-left: 8px;
+    }
+
+    .decor {
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #e3f0ff 60%, #1a73e8 100%);
+      opacity: 0.13;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        padding: 10px 2vw;
+      }
+
+      .section {
+        flex-direction: column !important;
+        gap: 18px;
+      }
+
+      .section-img,
+      .section-content-block {
+        min-width: 0;
+        max-width: 100%;
+        padding: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-heading {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 1.05rem;
+      }
+
+      .cta {
+        font-size: 1rem;
+      }
+    }
+
+    /* footer  */
+
+    footer {
+      /* background-color: #36454F; */
+      /* background-color: #818589; */
+        background-color: #2c3e50;
+      display: flex;
+      /* justify-content: space-around; */
+      height: 500px;
+      width: 100%;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      height: auto;
+      width: 100%;
+    }
+
+    .foot {
+      color: #f6f6f6;
+      font-size: 20px;
+      /* display: inline; */
+      /* padding: 50px 0; */
+    }
+
+    #f-l {
+      padding: 50px 0 20px;
+
+    }
+
+    #f-img {
+      padding: 50px 0 0;
+    }
+
+    #quick {
+      display: flex;
+      color: #d9dddf;
+      font-size: 20px;
+      text-decoration: none;
+      padding: 5px 0;
+    }
+
+    #quicks {
+      padding: 5px 0;
+      color: #d9dddf;
+
+    }
+
+    #quick:hover {
+      color: #77A22A;
+    }
+
+    .icon {
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 10px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body class="side-nav">
+  <header>
+    <section id="nav">
+      <div class="logo"><img src="1.png" alt="" height="60px"></div>
+      <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+      <nav id="nav-menu">
+        <ul>
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="logistics.html">Logistics</a></li>
+          <li><a href="warehouse.html">Warehousing</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          
+        </ul>
+      </nav>
+    </section>
+  </header>
+  <div class="container">
+    <div class="decor"></div>
+    <div class="main-heading">Navigating the Future of Logistics with SwiftBid: Services, Strategy, and Trends</div>
+    <span class="highlight-bar"></span>
+    <div class="section">
+      <div class="section-img" title="Logistics Overview"
+        onclick="alert('Logistics is the backbone of modern business!')">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          alt="Logistics Overview">
+      </div>
+      <div class="section-content-block">
+        <div class="section-content">
+          <b>Introduction:</b> <br>
+          In today’s fast-paced economy, logistics is the backbone of business success. Efficient logistics ensures
+          products reach customers on time, inventory is optimized, and costs are controlled. At <b>SwiftBid
+            Logistics</b>, we position ourselves as your strategic partner—simplifying complexity and driving
+          operational efficiency so you can focus on growth.
+        </div>
+      </div>
+    </div>
+    <div class="section reverse">
+      <div class="section-img" title="Understanding Logistics"
+        onclick="alert('SwiftBid delivers precision, reliability, and innovation!')">
+        <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=400&q=80"
+          alt="Understanding Logistics">
+      </div>
+      <div class="section-content-block">
+        <div class="section-title">Section 1: Understanding Logistics</div>
+        <div class="section-content">
+          Logistics is the art and science of managing the flow of goods, information, and resources from origin to
+          consumption. In modern supply chains, logistics is more than just transportation—it’s about precision,
+          reliability, and innovation.<br><br>
+          At SwiftBid, we approach logistics with a commitment to accuracy, on-time delivery, and continuous
+          improvement. Our solutions are designed to enable business growth and maximize customer satisfaction by
+          ensuring every link in your supply chain is strong and responsive.
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-img" title="Key Services"
+        onclick="alert('Explore our warehousing, inventory, distribution, and trucking!')">
+        <img src="markus-spiske-RWTUrJf7I5w-unsplash.jpg" alt="Key Logistics Services">
+      </div>
+      <div class="section-content-block">
+        <div class="section-title">Section 2: Key Logistics Services We Provide</div>
+        <div class="section-content">
+          <ul>
+            <li><b>Warehousing and Storage:</b> Our secure, modern facilities are equipped with advanced security
+              protocols and scalable capacity to meet diverse storage needs.</li>
+            <li><b>Inventory Management:</b> We use real-time tracking and optimization tools to safeguard your
+              inventory and ensure accuracy at every stage.</li>
+            <li><b>Distribution:</b> Our extensive delivery network guarantees fast, reliable coverage across regions,
+              getting your products where they need to be—on time, every time.</li>
+            <li><b>Trucking Services:</b> Our versatile fleet and flexible routing allow us to handle a wide range of
+              cargo, from standard loads to specialized shipments.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section reverse">
+      <div class="section-img" title="Our Core Purposes"
+        onclick="alert('We streamline, save costs, and put customers first!')">
+        <img src="https://images.unsplash.com/photo-1506619216599-9d16d0903dfd?auto=format&fit=crop&w=400&q=80"
+          alt="Core Purposes">
+      </div>
+      <div class="section-content-block">
+        <div class="section-title">Section 3: Our Core Purposes</div>
+        <div class="section-content">
+          At SwiftBid Logistics, we are dedicated to:
+          <ul>
+            <li>Streamlined operations that reduce complexity and boost efficiency</li>
+            <li>Cost-effective solutions tailored to your business needs</li>
+            <li>Real-time visibility and control over your shipments</li>
+            <li>Customer-centric service that puts your priorities first</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section-img" title="Trends in Logistics" onclick="alert('Discover the latest trends in logistics!')">
+        <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=400&q=80"
+          alt="Trends in Logistics">
+      </div>
+      <div class="section-content-block">
+        <div class="section-title">Section 4: Ongoing Trends in Logistics</div>
+        <div class="section-content">
+          The logistics industry is evolving rapidly. Key trends shaping the future include:
+          <ul>
+            <li><b>Digitization and Automation:</b> Technology is streamlining supply chains, improving transparency,
+              and reducing manual errors.</li>
+            <li><b>Sustainable Logistics Practices:</b> Eco-friendly solutions and green initiatives are becoming
+              standard for responsible logistics providers.</li>
+            <li><b>Real-time Tracking and Data Analytics:</b> Advanced analytics and IoT devices provide actionable
+              insights and end-to-end visibility.</li>
+            <li><b>E-commerce-driven Fulfillment Strategies:</b> The rise of e-commerce demands faster, more flexible
+              fulfillment and last-mile delivery solutions.</li>
+          </ul>
+          At SwiftBid, we are not just adapting to these trends—we are leading the way by investing in technology,
+          sustainability, and customer-focused innovation.
+        </div>
+      </div>
+    </div>
+    <div class="cta">
+      Ready to transform your logistics? <br>
+      <b>Partner with SwiftBid Logistics for smarter, more reliable supply chain solutions.</b><br>
+      <a href="mailto:swiftbidlogistics@gmail.com">Contact Us Today</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer">
+      <div class="foot">
+        <p id="f-l">Quick Links</p>
+        <a id="quick" href="about.html" aria-label="About Us">About Us</a>
+        <a id="quick" href="contact.html" aria-label="Contact Us">Contact Us</a>
+      </div>
+      <div class="foot">
+        <p id="f-l">Services</p>
+        <a id="quick" href="services.html" aria-label="Trucking Service">Trucking Service</a>
+        <a id="quick" href="warehouse.html" aria-label="Warehousing">Warehousing</a>
+        <a id="quick" href="logistics.html" aria-label="Logistics Services">Logistics Services</a>
+      </div>
+      <div class="foot">
+        <p id="f-l">Quick Contact</p>
+        <p id="quicks">650, Main Chownk, Talab Tillo Jammu, Jammu</p>
+        <p id="quicks">swiftbidlogistics@gmail.com</p>
+        <p id="quicks">Ph no. 9622551286</p>
+        <p id="quicks">Follow us on:</p>
+        <div class="icon">
+          <p class="icon"><a id="quick" href="https://www.facebook.com/profile.php?id=61563824091457&mibextid=ZbWKwL"
+              aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></p>
+          <p class="icon"><a id="quick" href="https://www.instagram.com/accounts/onetap/?next=%2F"
+              aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></p>
+          <p class="icon"><a id="quick" href="https://x.com/home" aria-label="Twitter"><i
+                class="fa-brands fa-x-twitter"></i></a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var btn = document.getElementById('mobile-menu-btn');
+      var nav = document.getElementById('nav-menu');
+      if (!btn || !nav) return;
+      var overlay = document.createElement('div');
+      overlay.className = 'mobile-menu-overlay';
+      document.body.appendChild(overlay);
+      function close(){ nav.classList.remove('active'); overlay.classList.remove('active'); if(btn.firstElementChild){ btn.firstElementChild.className='fa-solid fa-bars'; } }
+      btn.addEventListener('click', function(){
+        nav.classList.toggle('active');
+        overlay.classList.toggle('active');
+        if (btn.firstElementChild) {
+          btn.firstElementChild.className = nav.classList.contains('active') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        }
+      });
+      overlay.addEventListener('click', close);
+      nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', close); });
+      document.addEventListener('keydown', function(e){ if(e.key==='Escape' && nav.classList.contains('active')) close(); });
+    })();
+  </script>
+</body>
+
+</html>

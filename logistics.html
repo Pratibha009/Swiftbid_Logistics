@@ -3,363 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logistics Solutions</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-     <style>
-        /* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-.container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    border-bottom: 3px solid #77A22A;
-}
-
-header h1 {
-    float: left;
-    margin: 0;
-}
-
-header nav {
-    float: right;
-    margin-top: 10px;
-}
-
-header ul {
-    list-style: none;
-}
-
-header ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-header ul li a {
-    text-decoration: none;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-header ul li a:hover {
-    color: #77A22A;
-}
-
-.hero {
-    background: url('your-hero-image.jpg') no-repeat center center/cover;
-    height: 500px;
-    position: relative;
-   color: #fff;
-    text-align: center;
-}
-
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #333;
-    transform: translate(-50%, -50%);
-}
-
-.hero h2 {
-    font-size: 50px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #77A22A;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.btn:hover {
-    background: #fff;
-    color: #77A22A;
-}
-
-/* section {
-    padding: 20px 0;
-} */
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.services, .testimonials, .about, .contact {
-    background: #fff;
-    padding: 40px 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.services-grid, .testimonial {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.services-grid .service {
-    flex-basis: 30%;
-    text-align: center;
-    padding: 20px;
-}
-
-.service i {
-    font-size: 50px;
-    margin-bottom: 10px;
-    color: #77A22A;
-}
-
-.testimonial {
-    flex-basis: 45%;
-    margin: 20px;
-    text-align: center;
-}
-
-.contact form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact input, .contact textarea {
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.contact button {
-    padding: 10px;
-    background: #77A22A;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.contact button:hover {
-    background: #fff;
-    color: #77A22A;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-}
-.sec{
-    display: flex;
-    justify-content: space-around;
-    background-color: #333;
-    color:#ffffff;
-}
-.warehousing{
-    background-image: url(A-warehouse.jpg);
-    background-size: cover;
-    opacity: .8;
-    height: 500px;
-    width: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.warehousing img{
-    height: 500px;
-    width: 550px;
-    opacity: .5;
-}
-.driver{
-    height: 500px;
-    width: 500px;
-    background-image: url(trucking-service.jpeg);
-    opacity: .8;
-    background-size: cover ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.quote{
-    height: 500px;
-    width: 500px;
-    background-image: url(quote.jpg);
-    opacity: .8;
-    background-size: cover ;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-}
-.driver img{
-    height: 500px;
-    width: 550px;
-    opacity: .5;
-}
-#log{
-    font-size: 30px;
-    font-style: italic;
-    font-weight: 800;
-    padding: 20px;
-    flex-direction: column;
-}
-#logistic{
-    font-size: 30px;
-    background-color: transparent;
-    border-radius: 30px;
-    padding: 10px;
-    color: red;
-}
-a{
-    color: red;
-    text-decoration: none;
-}
-.logo{
-    display: inline-block;
-}
-
-     </style>
+    <title>Advanced Logistics Solutions</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Modern logistics solutions with real-time tracking, warehousing, and distribution.">
 </head>
-<body>
-    <header>
-       
-         <section id="nav">
-            <div class="logo"><img src="1.png" alt="" height="60px"></div>
-        
-        <nav>
-            <ul>
-                <li><a href="#p">Services</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="#head">Testimonials</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </section>
+<body class="logistics-pro-page side-nav">
+  <header>
+        <section id="nav">
+            <div class="logo"><img src="1.png" alt="Swiftbid Logistics Logo" height="60px" loading="lazy" decoding="async"></div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="logistics.html">Logistics</a></li>
+                    <li><a href="logistics-pro.html" aria-current="page">Logistics Pro</a></li>
+                    <li><a href="warehouse.html">Warehousing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
+    
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>
-
-Reliable Logistics Partner</h2>
-            <p>Streamline your supply chain with our comprehensive logistics solutions.</p>
-            <a href="#services" class="btn">Learn More</a>
+    <section class="pro-hero" aria-label="Logistics overview banner">
+        <div class="pro-hero__overlay"></div>
+        <div class="pro-hero__content">
+            <h1 class="pro-hero__title">Logistics That Keep Your Business Moving</h1>
+            <p class="pro-hero__subtitle">Reliable road freight and warehousing with milestone updates and SLA‑backed delivery.</p>
+            <div class="pro-hero__ctas">
+                <a class="cta-button" href="#modes">Explore Freight Modes</a>
+                <a class="cta-button secondary" href="#contact-cta">Get a Quote</a>
+            </div>
+            <div class="pro-hero__chips">
+                <span class="chip"><i class="fa-solid fa-route"></i> Milestone updates</span>
+                <span class="chip"><i class="fa-solid fa-shield"></i> Insured shipments</span>
+                <span class="chip"><i class="fa-solid fa-clock"></i> On-time SLAs</span>
+            </div>
         </div>
-    </section> 
-    <section class="sec">
-        <div class="warehousing">
-            <p id="log" >WAREHOUSING</p>
-            <button id="logistic" ><a href="warehouse.html"> Get Started </a>
-                
+    </section>
+
+    <section class="pro-sections" id="modes" aria-label="Freight modes">
+        <div class="pro-grid">
+            <div class="pro-card">
+                <i class="fa-solid fa-route"></i>
+                <h3>Road Transport</h3>
+                <p>FTL/LTL, milk runs, and time‑definite deliveries with nationwide coverage.</p>
+                <a href="services.html#transport" class="pro-link">View road services</a>
+            </div>
+            <div class="pro-card">
+                <i class="fa-solid fa-warehouse"></i>
+                <h3>Smart Warehousing</h3>
+                <p>Cross‑dock, bonded storage, cold chain, with scan‑based accuracy.</p>
+                <a href="warehouse.html" class="pro-link">Explore warehousing</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="pro-kpis" aria-label="Service levels and KPIs">
+        <div class="kpi-grid">
+            <div class="kpi"><i class="fa-solid fa-clock"></i><div><strong>98%</strong><span>On‑time delivery</span></div></div>
+            <div class="kpi"><i class="fa-solid fa-shield-heart"></i><div><strong>99.9%</strong><span>Damage‑free</span></div></div>
+            <div class="kpi"><i class="fa-solid fa-flag-checkered"></i><div><strong>On‑route</strong><span>Milestone updates</span></div></div>
+            <div class="kpi"><i class="fa-solid fa-headset"></i><div><strong>24/7</strong><span>Ops support</span></div></div>
+        </div>
+    </section>
+
+    <section class="pro-process" aria-label="How it works">
+        <h2 class="pro-heading">How We Move Your Freight</h2>
+        <ol class="process-steps">
+            <li><i class="fa-solid fa-file-signature"></i><span>Book & Confirm</span></li>
+            <li><i class="fa-solid fa-boxes-packing"></i><span>Pickup & Scan</span></li>
+            <li><i class="fa-solid fa-arrows-left-right"></i><span>Sort & Line‑haul</span></li>
+            <li><i class="fa-solid fa-truck-fast"></i><span>Last‑mile Delivery</span></li>
+            <li><i class="fa-solid fa-clipboard-check"></i><span>ePOD & Closure</span></li>
+        </ol>
+    </section>
+
+    <section class="pro-compliance" aria-label="Compliance & Certifications">
+        <div class="badge-row">
+            <div class="badge"><i class="fa-solid fa-scale-balanced"></i> GDPR‑ready</div>
+            <div class="badge"><i class="fa-solid fa-id-badge"></i> KYC/Driver vetting</div>
+            <div class="badge"><i class="fa-solid fa-temperature-low"></i> Cold‑chain SOPs</div>
+            <div class="badge"><i class="fa-solid fa-recycle"></i> Green routes</div>
+        </div>
+    </section>
+
+    <section class="pro-industries" aria-label="Industries served">
+        <h2 class="pro-heading">Industries We Serve</h2>
+        <div class="industry-grid">
+            <div class="industry">Retail & eCommerce</div>
+            <div class="industry">Automotive</div>
+            <div class="industry">Pharma & Healthcare</div>
+            <div class="industry">FMCG</div>
+            <div class="industry">Electronics</div>
+            <div class="industry">Industrial</div>
+        </div>
+    </section>
+
+    <section class="pro-contact-cta" id="contact-cta" aria-label="Get a logistics quote">
+        <div class="cta-box">
+            <h3>Need a tailored logistics plan?</h3>
+            <p>Share your lanes, volumes, and SLAs. Our experts will revert with an optimized proposal.</p>
+            <a class="cta-button" href="contact.html">Request a Quote</a>
+        </div>
+    </section>
+
+    <section class="pro-accordion" aria-label="Frequently asked questions">
+        <h2 class="pro-heading">FAQs</h2>
+        <div class="accordion" id="faq-accordion">
+            <button class="accordion-item" aria-expanded="false">
+                <span>Do you provide shipment status updates?</span>
+                <i class="fa-solid fa-chevron-down"></i>
             </button>
-            
-        </div>
-        <div class="driver">
-            <p id="log" >DRIVERS APPLY HERE</p>
-            <button id="logistic" >Get Started</button>
-            
-        </div>
-        <div class="quote">
-            <!-- <img src="trucking-service.jpeg" alt=""> -->
-            <p id="log" >REQUEST QUOTES</p>
-            <button id="logistic" >Get Started</button>
-             
-        </div>
-        
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service">
-                    <i class="fas fa-truck"></i>
-                    <h3>Transportation</h3>
-                    <p>Reliable and efficient transportation services for your goods.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-warehouse"></i>
-                    <h3>Warehousing</h3>
-                    <p>Secure and flexible storage solutions for all types of goods.</p>
-                </div>
-                <div class="service">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Distribution</h3>
-                    <p>Timely and accurate distribution services to meet your needs.</p>
-                </div>
+            <div class="accordion-panel" hidden>
+                <p>Yes. We share milestone updates such as pickup, in transit, out for delivery, and delivery confirmation.</p>
             </div>
-        </div> 
 
-</section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are a leading logistics company with years of experience in providing top-notch services to our clients. Our mission is to streamline your supply chain and help you achieve your business goals.</p>
-        </div>
-    </section>
-
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <p>"Their logistics solutions have significantly improved our supply chain efficiency. Highly recommended!"</p>
-                <p>- John Doe</p>
+            <button class="accordion-item" aria-expanded="false">
+                <span>Can you integrate with our ERP/WMS?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+                <p>We provide API-based integrations with major ERPs and WMS providers.</p>
             </div>
-            <div class="testimonial">
-                <p>"Their team is always responsive and goes the extra mile to meet our needs. We couldn't be happier with their services."</p>
-                <p>- Jane Smith</p>
+
+            <button class="accordion-item" aria-expanded="false">
+                <span>What regions do you serve?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+                <p>We operate nationwide with cross-border capabilities on request.</p>
             </div>
         </div>
     </section>
 
-    <!-- <section id="contact" class="contact">
-        <div class="container">
-            < h2>Contact Us</h2>
-            <form>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <textarea placeholder="Message"></textarea>
-                <button>Send</button>
-            </form>
+    <section class="pro-testimonials">
+        <h2 class="pro-heading">What our clients say</h2>
+        <div class="pro-carousel" aria-label="Testimonials">
+            <div class="pro-slide active">
+                <p>“The optimization tools improved our delivery SLAs by 12%.”</p>
+                <span>- Sarah, Operations Lead</span>
+            </div>
+            <div class="pro-slide">
+                <p>“Seamless warehousing integration and excellent support.”</p>
+                <span>- Amit, Supply Chain Director</span>
+            </div>
+            <div class="pro-slide">
+                <p>“Reliable and transparent logistics partner.”</p>
+                <span>- Sandeep Mahajan, Founder</span>
+            </div>
+            <div class="pro-carousel-controls">
+                <button class="pro-prev" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="pro-next" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
         </div>
-    </section> -->
+    </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2023 Swiftbid Logistics. All rights reserved.</p>
+        <div class="footer">
+            <div class="foot">
+                <p id="f-l">Quick Links</p>
+                <a id="quick" href="about.html" aria-label="About Us">About Us</a>
+                <a id="quick" href="contact.html" aria-label="Contact Us">Contact Us</a>
+            </div>
+            <div class="foot">
+                <p id="f-l">Services</p>
+                <a id="quick" href="services.html" aria-label="Trucking Service">Trucking Service</a>
+                <a id="quick" href="warehouse.html" aria-label="Warehousing">Warehousing</a>
+                <a id="quick" href="logistics.html" aria-label="Logistics Services">Logistics Services</a>
+            </div>
+            <div class="foot">
+                <p id="f-l">Quick Contact</p>
+                <p id="quicks">650, Main Chownk, Talab Tillo Jammu, Jammu</p>
+                <p id="quicks">swiftbidlogistics@gmail.com</p>
+                <p id="quicks">Ph no. 9622551286</p>
+                <p id="quicks">Follow us on:</p>
+                <div class="icon">
+                    <p class="icon"><a id="quick" href="https://www.facebook.com/profile.php?id=61563824091457&mibextid=ZbWKwL" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></p>
+                    <p class="icon"><a id="quick" href="https://www.instagram.com/accounts/onetap/?next=%2F" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></p>
+                    <p class="icon"><a id="quick" href="https://x.com/home" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></p>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+

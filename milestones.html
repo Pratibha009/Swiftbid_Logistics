@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swiftbid Logistics</title>
+    <title>Order Milestones</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta name="description" content="Check shipment milestone updates for your order.">
 </head>
-
-<body class="side-nav">
-  <header>
+<body class="milestones-page side-nav">
+    <header>
         <section id="nav">
-            <div class="logo"><img src="1.png" alt="" height="60px"></div>
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
+            <div class="logo"><img src="1.png" alt="Swiftbid Logistics Logo" height="60px" loading="lazy" decoding="async"></div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
                 <i class="fas fa-bars"></i>
             </button>
             <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="logistics.html">Logistics</a></li>
+                    <li><a href="logistics-pro.html">Logistics Pro</a></li>
                     <li><a href="warehouse.html">Warehousing</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    
                 </ul>
             </nav>
         </section>
     </header>
-    <main>
-        <div class="height">
-            <h1> CONTACT US </h1>
-        </div>
-        <div class="form">
-            <!-- <img src="Swift.jpg" alt="SwiftBid" width="98%"> -->
-            <script src="https://sheetdb.io/s/f/c6raot10kq2rx.js"></script>
-        </div>
-    </main>
-    <!-- <footer>
-        <p>Contact us: sandeepmahajan2003@gmail.com</p>
-        <p>Follow us on social media:</p>
-        <p class="icon"><a id="anchor" href="https://www.facebook.com/profile.php?id=61563824091457&mibextid=ZbWKwL"><i
-                    class="fa-brands fa-facebook"></i></a></p>
-        <p class="icon"><a id="anchor" href="https://www.instagram.com/accounts/onetap/?next=%2F"><i
-                    class="fa-brands fa-instagram"></i></a></p>
-        <p class="icon"><a id="anchor" href="https://x.com/home"><i class="fa-brands fa-x-twitter"></i></a></p>
 
-    </footer> -->
+    <section class="ms-hero" aria-label="Milestone tracker">
+        <div class="ms-hero__box">
+            <h1>Track Order Milestones</h1>
+            <p>Enter your Order ID to view pickup, in-transit, and delivery milestones.</p>
+            <form class="ms-form" aria-label="Milestone lookup">
+                <label for="ms-id" class="visually-hidden">Order ID</label>
+                <input id="ms-id" type="text" placeholder="Enter Order ID (e.g., SB-123456)" aria-label="Order ID">
+                <button type="button" id="ms-submit" class="button-small">Check</button>
+                <p class="ms-error" id="ms-error" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <section class="ms-results" aria-label="Milestone timeline">
+        <div class="ms-card" id="ms-card" hidden>
+            <div class="ms-header">
+                <div>
+                    <h2 id="ms-order-title">Order</h2>
+                    <p id="ms-order-sub">SLA: On-time</p>
+                </div>
+                <span class="ms-badge" id="ms-status">-</span>
+            </div>
+            <ol class="ms-timeline" id="ms-timeline">
+                
+            </ol>
+        </div>
+    </section>
+
     <footer>
         <div class="footer">
             <div class="foot">
@@ -78,6 +85,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
+

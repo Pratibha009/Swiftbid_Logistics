@@ -11,30 +11,81 @@
 
 </head>
 
-<body>
+<body class="side-nav">
     <!-- <div class="hero-img"> -->
     <header>
         <section id="nav">
             <div class="logo"><img src="1.png" alt="" height="60px"></div>
-
-            <nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="#head">Testimonials</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    
                 </ul>
             </nav>
         </section>
     </header>
     <main>
         <div class="hero">
-            <div class="hero-img">
+            <div class="hero-img split">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i> Trusted by 500+ businesses</div>
+                        <h1>SwiftBid Logistics</h1>
+                        <p>Reliable trucking, warehousing, and end-to-end logistics across India.</p>
+                        <div class="quick-actions">
+                            <!-- <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSKhbnrGWRtMvQjSXVHcwVDVZLghBzlRkWTsVVgZmXffNsqvBBgZSnfvztQZwpFpRrTQRNnJ" class="chip-link"><i class="fa-solid fa-clipboard-list"></i> Get a Quote</a> -->
+                             <a href="mailto:recipient-sandeepmahajan2003@gmail.com" class="chip-link"><i class="fa-solid fa-headset"></i> Get a Quote</a>
+                            <a href="contact.html" class="chip-link"><i class="fa-solid fa-headset"></i> Contact Sales</a>
+                            <a href="working.html" class="chip-link"><i class="fa-solid fa-location-arrow"></i> Track Shipment</a>
+                        </div>
+                        <div class="hero-search" role="search">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            <input type="text" placeholder="Track shipment or search services..." aria-label="Track shipment or search services">
+                            <button class="button button-small" type="button">Search</button>
+                        </div>
 
-                <!-- <img src="LOGISTIC.jpeg" alt="" height="500px" width="100%"> -->
-                <!-- <p class="hero-p">SwiftBid Logistics</p> -->
-                <p class="hero-p2">Your Trusted Logistics Partner</p>
-
+                        <div class="hero-tabs" role="tablist" aria-label="Explore">
+                            <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-services" id="tab-services"><i class="fa-solid fa-list-check"></i> Services</button>
+                            <button class="tab" role="tab" aria-selected="false" aria-controls="panel-careers" id="tab-careers"><i class="fa-solid fa-briefcase"></i> Open Positions</button>
+                        </div>
+                        <div class="tab-panels">
+                            <div class="tab-panel active" id="panel-services" role="tabpanel" aria-labelledby="tab-services">
+                                <div class="option-card">
+                                    <h3>Explore Services</h3>
+                                    <ul>
+                                        <li><a href="services.html"><i class="fa-solid fa-truck-fast"></i> Trucking Services</a></li>
+                                        <li><a href="logistics.html"><i class="fa-solid fa-boxes-stacked"></i> Logistics Solutions</a></li>
+                                        <li><a href="services.html"><i class="fa-solid fa-warehouse"></i> Warehousing</a></li>
+                                    </ul>
+                                    <a href="services.html" class="cta-button">View All Services</a>
+                                </div>
+                            </div>
+                            <div class="tab-panel" id="panel-careers" role="tabpanel" aria-labelledby="tab-careers">
+                                <div class="option-card">
+                                    <h3>Open Positions</h3>
+                                    <ul>
+                                        <li><a href="careers.html"><i class="fa-solid fa-id-card"></i> Drivers & Fleet</a></li>
+                                        <li><a href="careers.html"><i class="fa-solid fa-gears"></i> Operations</a></li>
+                                        <li><a href="careers.html"><i class="fa-solid fa-headset"></i> Sales & Support</a></li>
+                                    </ul>
+                                    <a href="careers.html" class="cta-button secondary">See Careers</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="LOGISTIC.jpeg" alt="SwiftBid Logistics fleet">
+                        <div class="image-badge"><i class="fa-solid fa-clock"></i> 98% On-time</div>
+                    </div>
+                </div>
+                <a href="#p" class="scroll-hint" aria-label="Scroll to explore"><span></span></a>
             </div>
         </div>
 
@@ -159,7 +210,7 @@
                 <div class="foot">
                     <p id="f-l">Quick Contact</p>
                     <p id="quicks">650, Main Chownk, Talab Tillo Jammu, Jammu</p>
-                    <p id="quicks">Sandeepmahajan2003@gmail.com</p>
+                    <p id="quicks">swiftbidlogistics@gmail.com</p>
                     <p id="quicks">Ph no. 9622551286</p>
                     <p id="quicks">Follow us on:</p>
 
@@ -178,6 +229,7 @@
 
         </footer>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>

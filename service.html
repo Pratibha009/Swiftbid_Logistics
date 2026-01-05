@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f7f7f7;
+            color: #222;
+        }
+        .hero {
+            background: url('markus-spiske-RWTUrJf7I5w-unsplash.jpg') center/cover no-repeat;
+            min-height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 32px;
+        }
+        .hero-title {
+            background: rgba(255,255,255,0.85);
+            padding: 24px 40px;
+            border-radius: 12px;
+            font-size: 2.3em;
+            color: #2a4d69;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 40px 30px;
+        }
+        .services-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px 28px;
+        }
+        .service {
+            background: #f4f8fb;
+            border-radius: 10px;
+            box-shadow: 0 1px 6px rgba(26,115,232,0.07);
+            padding: 28px 18px 18px 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.18s, box-shadow 0.18s;
+            position: relative;
+        }
+        .service:hover {
+            transform: translateY(-7px) scale(1.03);
+            box-shadow: 0 6px 24px rgba(26,115,232,0.13);
+            background: #eaf2ff;
+        }
+        .service-img {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+            margin-bottom: 1em;
+            filter: drop-shadow(0 2px 6px rgba(26,115,232,0.08));
+        }
+        .service-title {
+            font-size: 1.3em;
+            color: #41729f;
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .service-desc {
+            font-size: 1.08em;
+            color: #444;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .services-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 8px;
+            }
+            .hero-title {
+                font-size: 1.3em;
+                padding: 12px 10px;
+            }
+        }
+    </style>
+</head>
+<body class="side-nav">
+    <header>
+        <section id="nav">
+            <div class="logo"><img src="1.png" alt="" height="60px"></div>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="logistics.html">Logistics</a></li>
+                    <li><a href="warehouse.html">Warehousing</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+    <div class="hero">
+        <div class="hero-title">Our Services</div>
+    </div>
+    <div class="container">
+        <div class="services-list">
+            <div class="service">
+                <img class="service-img" src="https://cdn.pixabay.com/photo/2016/11/18/16/51/truck-1836974_1280.png" alt="Trucking Services">
+                <div class="service-title">Trucking Services</div>
+                <div class="service-desc">
+                    Reliable and efficient trucking solutions for all your freight needs. Our modern fleet and experienced drivers ensure timely and safe delivery across the region.
+                </div>
+            </div>
+            <div class="service">
+                <img class="service-img" src="markus-spiske-RWTUrJf7I5w-unsplash.jpg" alt="Warehousing">
+                <div class="service-title">Warehousing</div>
+                <div class="service-desc">
+                    Secure, scalable, and strategically located warehousing facilities to store your goods. We offer inventory management, cross-docking, and value-added services.
+                </div>
+            </div>
+            <div class="service">
+                <img class="service-img" src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" alt="Logistics & Supply Chain">
+                <div class="service-title">Logistics &amp; Supply Chain</div>
+                <div class="service-desc">
+                    End-to-end logistics and supply chain management to optimize your operations. From planning to execution, we streamline processes for maximum efficiency.
+                </div>
+            </div>
+            <div class="service">
+                <img class="service-img" src="https://cdn-icons-png.flaticon.com/512/2721/2721296.png" alt="Technology Integration">
+                <div class="service-title">Technology Integration</div>
+                <div class="service-desc">
+                    Leverage the latest technology for real-time tracking, data analytics, and seamless integration with your business systems. Stay ahead with our innovative solutions.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
